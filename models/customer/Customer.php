@@ -2,6 +2,8 @@
 
 namespace app\models\customer;
 
+use DateTime;
+
 /**
  * Created by PhpStorm.
  * User: Max-QA
@@ -19,7 +21,15 @@ class Customer
     public $notes = '';
 
     /** @var PhoneRecord[] */
-    public  $phones = [];
+    public $phones = [];
+
+    /**
+     * @return PhoneRecord[]
+     */
+    public function getPhones()
+    {
+        return $this->phones;
+    }
 
     /**
      * Customer constructor.
@@ -32,5 +42,9 @@ class Customer
         $this->birth_date = $birth_date;
     }
 
+    public function addPhone(Phone $phone)
+    {
+        $this->phones[] = $phone;
+    }
 
 }
