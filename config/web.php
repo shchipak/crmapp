@@ -13,6 +13,13 @@ return [
             'enablePrettyUrl' => true,
             'showScriptName' => false
         ],
+        'view' => [
+            'renderers' => [
+                'md' => [
+                    'class' => 'app\utilities\MarkdownRenderer'
+                ]
+            ]
+        ]
 
     ],
     'modules' => [
