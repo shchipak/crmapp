@@ -3,8 +3,8 @@ use yii\helpers\Html;
 
 /* @var $this yii\web\View */
 /* @var $content string */
-\yii\bootstrap\BootstrapAsset::register($this);
-\yii\web\YiiAsset::register($this);
+ app\assets\ApplicationUiAssetBundle::register($this);
+
 
 ?>
 <?php $this->beginPage() ?>
