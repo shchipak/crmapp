@@ -32,6 +32,9 @@ return [
                 ]
             ]
         ],
+        'user' => [
+            'identityClass' => 'app\models\user\UserRecord'
+        ],
     ],
 
     'modules' => [

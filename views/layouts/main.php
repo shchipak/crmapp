@@ -3,7 +3,7 @@ use yii\helpers\Html;
 
 /* @var $this yii\web\View */
 /* @var $content string */
- app\assets\ApplicationUiAssetBundle::register($this);
+app\assets\ApplicationUiAssetBundle::register($this);
 
 
 ?>
@@ -18,7 +18,17 @@ use yii\helpers\Html;
     </head>
     <body>
     <?php $this->beginBody() ?>
+
     <div class="container">
+        <div class="authorization-indicator">
+            <? if (Yii::$app->user->isGuest): ?>
+                <?= Html::tag('span', 'guest'); ?>
+                <?= Html::a('login', '/site/login'); ?>
+            <? else: ?>
+                <?= Html::tag('span', Yii::$app->user->identity->username); ?>
+                <?= Html::a('logout', 'site/logout'); ?>
+            <? endif; ?>
+        </div>
         <?= $content ?>
         <footer class="footer"><?= Yii::powered(); ?></footer>
     </div>
