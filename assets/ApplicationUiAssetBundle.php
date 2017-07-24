@@ -10,7 +10,7 @@ use yii\web\AssetBundle;
  */
 class ApplicationUiAssetBundle extends AssetBundle
 {
-    public $basePath = '@app/assets/ui';
+    public $sourcePath = '@app/assets/ui';
     public $css = [
         'css/main.css',
     ];

@@ -55,7 +55,7 @@ class UserRecord extends \yii\db\ActiveRecord implements IdentityInterface
             $this->password = Yii::$app->security->generatePasswordHash($this->password);
         }
         if ($this->isNewRecord) {
-            $this->auth_key = Yii::$app->security->generateRandomKey($length = 255);
+            $this->auth_key = Yii::$app->security->generateRandomString($length = 255);
         }
 
         return $return;
